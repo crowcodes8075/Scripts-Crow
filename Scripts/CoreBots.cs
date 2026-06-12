@@ -1,4 +1,4 @@
-﻿/*
+/*
 name: null
 description: null
 tags: null
@@ -12682,25 +12682,13 @@ public class CoreSkills
     {
         int energyStacks = GetAuraStacks("Residual Energy", true);
 
-        if (Bot.Player.Mana < 25)
-        {
-            if (Cast(4))
-                return;
-        }
-
-        if (IsHealthLow(70))
+        if (IsHealthLow(80) && Left("Royal Resolve", 1, true))
         {
             if (Cast(3))
                 return;
         }
 
-        // if (!HasAura("Waiting For Corvak", true))
-        // {
-        //     if (Cast(3))
-        //         return;
-        // }
-
-        if (energyStacks >= 22)
+        if (Bot.Player.Mana < 24 || energyStacks >= 22)
         {
             if (Cast(4))
                 return;
